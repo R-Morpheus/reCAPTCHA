@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.get('/', (_, res) => res.sendFile(__dirname + '/index.html'));
 
-// Функция высшего порядка для обработки подписки
+// A higher-order function for subscription processing
 function handleSubscription(callback) {
 	return async function(req, res) {
 		if (!req.body.captcha)
@@ -31,9 +31,9 @@ function handleSubscription(callback) {
 	};
 }
 
-// Демонстрационная функция обратного вызова
+// Demo callback function
 function subscriptionSuccess(req, res) {
-	// Ваша логика после успешной проверки капчи
+	// Your logic after successful captcha verification
 	res.json({ success: true, msg: 'Captcha passed and subscription successful!' });
 }
 
